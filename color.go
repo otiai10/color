@@ -131,6 +131,11 @@ func Unset() {
 	fmt.Fprintf(Output, "%s[%dm", escape, Reset)
 }
 
+// Clone replicates the color.
+func (c *Color) Clone() *Color {
+	return New(c.params...)
+}
+
 // Set sets the SGR sequence.
 func (c *Color) Set() *Color {
 	if c.isNoColorSet() {

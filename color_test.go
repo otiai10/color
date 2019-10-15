@@ -82,6 +82,11 @@ func TestColorEquals(t *testing.T) {
 		t.Error("Two black colors are not equal")
 	}
 
+	clone := fgblack1.Clone()
+	if !fgblack1.Equals(clone) {
+		t.Error("Cloned black colors are not equal")
+	}
+
 	if fgblack1.Equals(bgblack) {
 		t.Error("Fg and bg black colors are equal")
 	}
